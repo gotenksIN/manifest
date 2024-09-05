@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
+    
+    <!-- Device Dependencies-->
     <project path="device/asus/davinci" name="AOSPA/android_device_asus_davinci" remote="aospa" />
     <project path="device/motorola/dubai" name="AOSPA/android_device_motorola_dubai" remote="aospa" />
     <project path="device/nothing/phone1" name="AOSPA/android_device_nothing_phone1" remote="aospa" />
@@ -82,4 +84,31 @@
     <project path="vendor/nothing/firmware" name="proprietary_vendor_nothing_firmware" remote="blobs-gitlab" />
     <project path="vendor/realme/firmware" name="proprietary_vendor_realme_firmware" remote="blobs-gitlab" />
     <project path="vendor/xiaomi/camera" name="proprietary_vendor_xiaomi_camera" remote="blobs-gitlab" />
+
+    <!-- Google stuff-->
+    <remote  name="blobs-gitlab-ssh"
+            fetch="ssh://git@gitlab.com/ThankYouMario"
+            revision="uvite" />
+    <remove-project name="platform/prebuilts/module_sdk/art" />
+    <remove-project name="platform/prebuilts/module_sdk/AdServices" />
+    <remove-project name="platform/prebuilts/module_sdk/AppSearch" />
+    <remove-project name="platform/prebuilts/module_sdk/Bluetooth" />
+    <remove-project name="platform/prebuilts/module_sdk/conscrypt" />
+    <remove-project name="platform/prebuilts/module_sdk/ConfigInfrastructure" />
+    <remove-project name="platform/prebuilts/module_sdk/Connectivity" />
+    <remove-project name="platform/prebuilts/module_sdk/DeviceLock" />
+    <remove-project name="platform/prebuilts/module_sdk/HealthFitness" />
+    <remove-project name="platform/prebuilts/module_sdk/IPsec" />
+    <remove-project name="platform/prebuilts/module_sdk/Media" />
+    <remove-project name="platform/prebuilts/module_sdk/MediaProvider" />
+    <remove-project name="platform/prebuilts/module_sdk/OnDevicePersonalization" />
+    <remove-project name="platform/prebuilts/module_sdk/Permission" />
+    <remove-project name="platform/prebuilts/module_sdk/RemoteKeyProvisioning" />
+    <remove-project name="platform/prebuilts/module_sdk/Scheduling" />
+    <remove-project name="platform/prebuilts/module_sdk/SdkExtensions" />
+    <remove-project name="platform/prebuilts/module_sdk/StatsD" />
+    <remove-project name="platform/prebuilts/module_sdk/Uwb" />
+    <remove-project name="platform/prebuilts/module_sdk/Wifi" />
+    <project path="prebuilts/module_sdk" name="android_prebuilts_modules_sdk" clone-depth="1" remote="blobs-gitlab-ssh" />
+    <project path="vendor/google/modules" name="proprietary_vendor_google_modules" clone-depth="1" remote="blobs-gitlab-ssh" />
 </manifest>
